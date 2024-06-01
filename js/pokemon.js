@@ -1,4 +1,6 @@
 async function getPokemonInfo() {
+  // Evita que se envíe el formulario de forma predeterminada
+  event.preventDefault();
   const pokemonNameInput = document.getElementById('pokemon-name');
   const pokemonName = pokemonNameInput.value.trim().toLowerCase();
 
@@ -18,12 +20,14 @@ async function getPokemonInfo() {
 function displayPokemonDetails(pokemonData) {
   const pokemonDetailsElement = document.getElementById('pokemon-details');
   pokemonDetailsElement.innerHTML = `
-    <h2>${pokemonData.name}</h2>
-    <p>ID: ${pokemonData.id}</p>
-    <p>Tipo: ${pokemonData.types.map(type => type.type.name).join(', ')}</p>
-    <p>Altura: ${pokemonData.height} dm</p>
-    <p>Peso: ${pokemonData.weight} hg</p>
-    <img src="${pokemonData.sprites.front_default}" alt="${pokemonData.name}">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <h2>${pokemonData.name}</h2>
+      <p>ID: ${pokemonData.id}</p>
+      <p>Tipo: ${pokemonData.types.map(type => type.type.name).join(', ')}</p>
+      <p>Altura: ${pokemonData.height} dm</p>
+      <p>Peso: ${pokemonData.weight} hg</p>
+      <img src="${pokemonData.sprites.front_default}" alt="${pokemonData.name}">
+    </div>
   `;
 }
 
