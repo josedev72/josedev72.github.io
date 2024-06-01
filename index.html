@@ -8,41 +8,10 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>CAC-Movies</title>
 </head>
+
 <body>
-    <header class="header">
-        <a class="anclaLogo" href="#">
-            <i class="fa fa-film"></i>
-            <span>CAC-MOVIES</span>
-        </a>
-        <nav class="navegacion">
-
-            <li class="listaItem">
-                <span class="bienvenida" id="welcomeMessage"></span>
-            </li>
-
-            <ul class="listaNav">
-                <li class="listaItem">
-                    <a class="linkNav" href="#tendencias">Tendencias</a>
-                </li>
-
-                <li class="listaItem">
-                    <a class="linkNav" href="#tendencias">Tendencias</a>
-                </li>
-
-                <li class="listaItem"  id="registerItem">
-                    <a class="linkNav" href="pages/registrarse.html">Registrarse</a>
-                </li>
-
-                <li class="listaItem" id="loginItem">
-                    <a class="linkNav iniciarSesion" href="pages/iniciosesion.html">Iniciar Sesión</a>
-                </li>
-
-                <li class="listaItem" id="API Pokemón">
-                    <a class="linkNav iniciarSesion" href="pages/index_api.html">API</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-container"></div>
+    
     <main id="main" class="main">
         <section class="sectionPrincipal">
             <h1 class="tituloPrincipal">
@@ -227,45 +196,10 @@
 
     </main>
 
-    <footer class="footer">
-        <nav class="navegacion">
-            <ul class="listaNav">
-                <li class="listaItem">
-                    <a class="linkNav" href="#">Términos y Condiciones</a>
-                </li>
-                <li class="listaItem">
-                    <a class="linkNav" href="#">Preguntas Frecuentes</a>
-                </li>
-                <li class="listaItem">
-                    <a class="linkNav" href="#">Ayuda</a>
-                </li>
-                <li class="listaItem">
-                    <a class="linkNav administradorPeliculas" href="#">Administrador Peliculas</a>
-                </li>
-            </ul>
-        </nav>
-        <a href="#  " class="flechaArriba">
-            <img src="assets/img/flecha-hacia-arriba.png" alt="ir arriba flecha">
-        </a>
-    </footer>
+    <div id="footer-container"></div>
 
-    <script>
-        // Obtener los elementos de 'Registrarse' e 'Iniciar Sesión'
-        const registerItem = document.getElementById('registerItem');
-        const loginItem = document.getElementById('loginItem');
+    <script src="js/cabecera.js"></script>
 
-        // Obtener el nombre del usuario del localStorage
-        const userName = localStorage.getItem('userName');
-    
-        // Mostrar el mensaje de bienvenida
-        const welcomeMessage = document.getElementById('welcomeMessage');
-        welcomeMessage.textContent = `Bienvenido, ${userName} !!`;
-
-        if (userName.length > 1) {
-            // Ocultar los elementos de 'Registrarse' e 'Iniciar Sesión'
-            registerItem.style.display = 'none';
-            loginItem.style.display = 'none';
-        }
-      </script>
+    <script src="js/saludo.js"></script>
 </body>
 </html>
