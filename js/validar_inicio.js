@@ -4,33 +4,13 @@ form.addEventListener("submit", (event) => {
     // Evita que se envíe el formulario de forma predeterminada
     event.preventDefault();
 
-    const nameInput = document.getElementById("name");
-    const lastNameInput = document.getElementById("lastName");
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
-    const termsAcceptedInput = document.getElementById("termsAccepted");
 
     let isValid = true;
 
-    console.log("Contenido de nameInput: " + nameInput.value.trim());
-
-
-    // Validar el nombre
-    if (nameInput.value.trim() === "") {
-        isValid = false;
-        nameInput.classList.add("error");
-    } else {
-        nameInput.classList.remove("error");
-    }
-
-    // Validar el apellido
-    if (lastNameInput.value.trim() === "") {
-        isValid = false;
-        lastNameInput.classList.add("error");
-    } else {
-        lastNameInput.classList.remove("error");
-    }
-
+    console.log("Contenido de emailInput: " + emailInput.value.trim());
+    
     // Validar el correo electrónico
     if (!isValidEmail(emailInput.value.trim())) {
         isValid = false;
@@ -46,19 +26,10 @@ form.addEventListener("submit", (event) => {
     } else {
         passwordInput.classList.remove("error");
     }
-
-    // Validar si se aceptaron los términos
-    if (!termsAcceptedInput.checked) {
-        isValid = false;
-        termsAcceptedInput.classList.add("error");
-    } else {
-        termsAcceptedInput.classList.remove("error");
-    }
-
+    
     if (isValid) {
         // Guardar el nombre ingresado en el formulario
-        const nombre = nameInput.value + ' ' + lastNameInput.value;
-        localStorage.setItem('userName', nombre);
+        //localStorage.setItem('userName', emailInput.value);
     
         // Redirigir al usuario a index.html
         window.location.href = '../../index.html';
